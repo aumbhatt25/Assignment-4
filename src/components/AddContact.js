@@ -15,7 +15,7 @@ function AddContact({ method = 'POST' }) {
                 <input id='name' name="name" className={
                     errorData && errorData.nameError && classes.inputError
                 } defaultValue={editData ? editData.name : ''}></input>
-                {errorData && (
+                {errorData && errorData.nameError && (
                     <>
                         <p>{errorData.nameError}</p>
                     </>
@@ -28,7 +28,7 @@ function AddContact({ method = 'POST' }) {
                 <input id='email' name="email" className={
                     errorData && errorData.emailError && classes.inputError
                 } defaultValue={editData ? editData.email : ''}></input>
-                {errorData && (
+                {errorData && errorData.emailError && (
                     <>
                         <p>{errorData.emailError}</p>
                     </>
@@ -38,7 +38,7 @@ function AddContact({ method = 'POST' }) {
                 <input id='phone' name="phone" className={
                     errorData && errorData.phoneError && classes.inputError
                 } defaultValue={editData ? editData.phone : ''}></input>
-                {errorData && (
+                {errorData && errorData.phoneError && (
                     <>
                         <p>{errorData.phoneError}</p>
                     </>
@@ -74,7 +74,7 @@ export async function action({ request, params }) {
 
     const error = {};
     if (contactData.name === "") {
-        error.nameError = "Please Enter Person Name";
+    error.nameError = "Please Enter Person Name";
     }
     if (
         contactData.email === "" ||
@@ -99,8 +99,7 @@ export async function action({ request, params }) {
     if (Object.keys(error).length > 0) {
         return error;
     }
-
-    if (method === 'PATCH') {
+    else if(method === 'PATCH') {
         const response = await fetch(`https://assignment-4-25cbc-default-rtdb.firebaseio.com/contacts/${params.contactId}.json`, {
             method: method,
             body: JSON.stringify(contactData),
@@ -108,6 +107,7 @@ export async function action({ request, params }) {
                 'Content-Type': 'Application/json'
             }
         })
+        return redirect('/contact');
 
     } else {
         const response = await fetch('https://assignment-4-25cbc-default-rtdb.firebaseio.com/contacts.json', {
@@ -117,7 +117,6 @@ export async function action({ request, params }) {
                 'Content-Type': 'Application/json'
             }
         })
+        return redirect('/contact');
     }
-
-    return redirect('/contact');
 }

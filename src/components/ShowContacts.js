@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { json, useLoaderData, Link, Outlet, useNavigate, useNavigation } from "react-router-dom";
 import classes from './ShowContacts.module.css'
 import { RiContactsBook2Fill } from "react-icons/ri";
+import {BiSearch} from "react-icons/bi"
 import ContactRender from "./ContactRender";
 
 function ShowContacts() {
@@ -35,8 +36,8 @@ function ShowContacts() {
                     <span>Welcome to firstCRM contact page</span>
                 </div>
             </div>
-            <div className={classes.search}><div>
-                <input type={'search'} placeholder='Search contacts' onChange={searchHandler} ref={ref} />
+            <div className={classes.search}><div className={classes.searchDiv}>
+            <BiSearch className={classes.iconsearch}/><input type={'search'} placeholder='Search contacts' onChange={searchHandler} ref={ref} />
             </div>
                 <button className={classes.addbtn} onClick={buttonHandler}>+ Add Contact</button>
             </div>

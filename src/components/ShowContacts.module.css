@@ -17,6 +17,10 @@
     color: white;
     padding: 8px;
     margin-left: 5px;
+    cursor: pointer;
+}
+.addbtn:hover{
+    background-image:linear-gradient(to right,rgb(250, 184, 146),rgb(255, 157, 187)) ;
 }
 
 .welcome{
@@ -43,9 +47,18 @@
     color: gray;
 }
 
+.iconsearch{
+    position: absolute;
+    right: 7px;
+    top: 8px;
+}
+
 .search{
     display: flex;
     flex-direction: row;
+}
+.searchDiv{
+    position: relative;
 }
 
 .search input{

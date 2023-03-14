@@ -40,6 +40,7 @@
     border-radius: 5px;
     padding: 20px;
     box-shadow: 2px 2px 3px rgb(94, 94, 94);
+    margin-right: 10px;
 }
 
 .edit{
@@ -58,6 +59,7 @@
     display: table-cell;
     text-align: left;
     padding: 10px;
+    width: 40%;
     word-break: break-word;
     color:rgb(124, 124, 124);
 }
@@ -69,14 +71,13 @@
     background-image:linear-gradient(to right,rgb(255, 115, 34),rgb(255, 86, 137)) ;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(255, 94, 0);
+    cursor: pointer;
     color: white;
 }
 
 .coledit:hover{
     background-image:linear-gradient(to right,rgb(250, 184, 146),rgb(255, 157, 187)) ;
     cursor: pointer;
-    border: 1px solid rgb(255, 115, 0);
 }
 
 .circle{
@@ -116,5 +117,11 @@ a{
 @media screen and (max-width: 1048px) {
     .showDetails{
         margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .col1, .col{
+        font-size: small;
     }
 }
