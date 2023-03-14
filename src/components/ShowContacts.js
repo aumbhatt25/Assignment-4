@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { json, useLoaderData, Link, Outlet, useNavigate } from "react-router-dom";
+import { json, useLoaderData, Link, Outlet, useNavigate, useNavigation } from "react-router-dom";
 import classes from './ShowContacts.module.css'
 import { RiContactsBook2Fill } from "react-icons/ri";
 import ContactRender from "./ContactRender";
@@ -10,6 +10,7 @@ function ShowContacts() {
         nav('/addcontact');
     };
 
+    const navigate=useNavigation();
     const getData = useLoaderData();
     const [list, setList] = useState(getData);
     let filteredList = [];
@@ -53,9 +54,9 @@ function ShowContacts() {
                 ))}
             </ul>
         </div>
-        <div>
-            <Outlet />
-            </div>
+        <div className={classes.loadDiv}>
+      {navigate.state === 'loading' ? <h3 className={classes.loading}>Loading...</h3> : <Outlet />}
+        </div>
         </div>
     )
 }

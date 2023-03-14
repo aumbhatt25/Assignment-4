@@ -1,5 +1,4 @@
 import classes from './ContactRender.module.css'
-import { useState } from 'react';
 
 function ContactRender(props) {
     const twoLetter = props.contact.name.split(' ');

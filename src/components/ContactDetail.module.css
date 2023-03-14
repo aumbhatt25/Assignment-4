@@ -40,7 +40,6 @@
     border-radius: 5px;
     padding: 20px;
     box-shadow: 2px 2px 3px rgb(94, 94, 94);
-    margin-top: 165px;
 }
 
 .edit{
@@ -108,6 +107,10 @@
 
 a{
     word-break: initial;
+}
+
+.loading{
+    display: flex;
 }
 
 @media screen and (max-width: 1048px) {

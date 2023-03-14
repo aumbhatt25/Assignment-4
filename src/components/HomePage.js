@@ -7,7 +7,7 @@ function HomePage(){
         <div className={classes.div}>
             <h4>Home Page</h4>
             <h1>Welcome to Contacts</h1>
-            {nav.state==="loading" && <div className={classes.loading}>Loading...</div>}
+            {nav.state==="loading" && <h4 className={classes.loading}>Loading...</h4>}
         </div>
     )
 }

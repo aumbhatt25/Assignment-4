@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { json, useLoaderData, Link, useNavigate, Outlet } from "react-router-dom";
+import { json, useNavigation, useLoaderData, Link, Outlet } from "react-router-dom";
 import classes from './ContactDetail.module.css'
 
 function ContactDetail() {
     const details = useLoaderData();
-    const nav = useNavigate();
     const [edit, isEdit] = useState(false);
 
     const editHandler = () => {
@@ -20,7 +19,7 @@ function ContactDetail() {
     }
 
     return (
-        <>
+        <div>
       <div className={classes.showDetails}>
         {!edit ? <><div className={classes.circleDiv}>
           <p><span className={classes.circle}><span>{profileWord}</span></span></p>
@@ -53,7 +52,7 @@ function ContactDetail() {
         :
         <Outlet/>}
       </div>
-    </>
+    </div>
     )
 }
 
