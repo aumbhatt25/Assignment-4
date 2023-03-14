@@ -1,0 +1,26 @@
+.root{
+    display: flex;
+    justify-content: space-between;
+    font: 1em sans-serif;
+}
+
+.root main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+@media screen and (max-width: 1048px) {
+    .root main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .root{
+        display: flex;
+        overflow-x: hidden;
+    }
+}

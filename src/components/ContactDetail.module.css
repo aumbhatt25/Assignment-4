@@ -1,0 +1,117 @@
+.name{
+    display: table-row;
+    
+}
+
+.phone{
+    display: table-row;
+
+}
+.email{
+    display: table-row;
+
+}
+.address{
+    display: table-row;
+    
+}
+.company{
+    display: table-row;
+
+}
+
+.nameShow{
+    display: flex;
+    font-size: large;
+    padding-top: 20px;
+}
+
+.showPosition{
+    color:rgb(137 137 137);
+    padding: 11px;
+    padding-top: 3px;
+    font-size: smaller;
+}
+
+.showDetails{
+    min-width: 16vw;
+    height: fit-content;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 2px 3px rgb(94, 94, 94);
+    margin-top: 165px;
+}
+
+.edit{
+    display: flex;
+    justify-content: center;
+}
+
+.col{
+    display: table-cell;
+    text-align: left;
+    padding: 10px;
+    word-break: break-word;
+}
+
+.col1{
+    display: table-cell;
+    text-align: left;
+    padding: 10px;
+    word-break: break-word;
+    color:rgb(124, 124, 124);
+}
+
+.coledit{
+    text-align: center;
+    display: table-cell;
+    width: 100%;
+    background-image:linear-gradient(to right,rgb(255, 115, 34),rgb(255, 86, 137)) ;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 94, 0);
+    color: white;
+}
+
+.coledit:hover{
+    background-image:linear-gradient(to right,rgb(250, 184, 146),rgb(255, 157, 187)) ;
+    cursor: pointer;
+    border: 1px solid rgb(255, 115, 0);
+}
+
+.circle{
+    width: 5em;
+    border-radius: 50%;
+    background-color: rgb(136, 155, 240);
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle span{
+    font-size: 1.5em;
+}
+
+.circleDiv{
+    margin-bottom: 5%;
+    display: block;
+    width:100%
+}
+
+.circleDiv>p{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    word-break: initial;
+}
+
+@media screen and (max-width: 1048px) {
+    .showDetails{
+        margin-top: 0px;
+    }
+}

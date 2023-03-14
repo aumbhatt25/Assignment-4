@@ -1,0 +1,96 @@
+.all{
+    display: flex;
+    flex-direction: row;
+}
+
+.mainShow{
+    display: flex;
+    margin: 25px;
+    flex-direction: column;
+}
+
+.addbtn{
+    display: flex;
+    border-radius: 4px;
+    border: 0px;
+    background-image: linear-gradient(to right,rgb(255, 115, 34),rgb(255, 86, 137));
+    color: white;
+    padding: 8px;
+    margin-left: 5px;
+}
+
+.welcome{
+    margin-top: 25px;
+    display: flex;
+    margin-bottom: 25px;
+    flex-direction: row;
+}
+
+.contactIcon{
+    display: flex;
+    flex-direction:row;
+    font-size: 2rem;
+    color:rgb(255, 94, 0);
+}
+
+.welcomeText{
+    display: flex;
+    flex-direction: column;
+}
+
+.welcomeText span:nth-child(2){
+    font-size: small;
+    color: gray;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+}
+
+.search input{
+    display: flex;
+    border-radius: 14px;
+    border: 0px;
+    background-color: rgb(214, 214, 214);
+    padding: 8px;
+}
+
+.header p{
+    display: inline;
+}
+.header{
+    margin-top: 25px;
+    display:flex;
+    justify-content: space-between;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+}
+
+.p1{
+    margin-left: 17%;
+    color: rgb(117, 117, 117);
+}
+.p2{
+    color: rgb(117, 117, 117);
+    margin-right: 15%;
+}
+
+@media screen and (max-width: 1048px) {
+    .all{
+        display: flex;
+        flex-direction: column;
+    }
+
+    ul{
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .mainShow{
+        display: flex;
+        margin-left: 5px;
+        font-size: small;
+    }
+}

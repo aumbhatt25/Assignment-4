@@ -1,24 +1,56 @@
-import logo from './logo.svg';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import AddContact from './components/AddContact'
+import { action as addAction } from './components/AddContact'
 import './App.css';
+import RootLayout from './pages/Root';
+import ErrorElement from './pages/Error';
+import ShowContacts, { loader as showContactLoader } from './components/ShowContacts';
+import ContactDetail from './components/ContactDetail';
+import { loader as detailLoader } from './components/ContactDetail';
+import HomePage from './components/HomePage';
+
+const contactRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout/>,
+    errorElement: <ErrorElement/>,
+    children: [
+      {
+        path: '',
+        element: <HomePage/>
+      },
+      {
+        path: '/contact',
+        element: <ShowContacts/>,
+        loader: showContactLoader,
+        children: [
+          {
+            path: ':contactId',
+            id: 'detail',
+            element: <ContactDetail/>,
+            loader: detailLoader,
+            children: [
+              {
+                path: 'edit',
+                element: <AddContact method='PATCH'/>,
+                action: addAction
+              }
+            ]
+          }
+        ]
+      },
+      {
+        path: 'addcontact',
+        element: <AddContact method='POST'/>,
+        action: addAction
+      }
+  ]
+  }
+])
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={contactRouter} />
   );
 }
 
