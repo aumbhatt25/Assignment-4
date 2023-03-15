@@ -7,7 +7,7 @@ function AddContact({ method = 'POST' }) {
     const errorData = useActionData();
 
     return (
-        <Form method={method} action={method === 'PATCH' ? '' : '/addcontact'}>
+        <Form method={method}>
             <div className={classes.form}>
                 {method === 'PATCH' ? <label>Edit Contact</label> : <label>Add New Contact</label>}
                 <label>Name</label>
@@ -35,9 +35,9 @@ function AddContact({ method = 'POST' }) {
                 )}
                 <br />
                 <label>Phone</label>
-                <input id='phone' name="phone" className={
+                <input id='phone' name="phone" defaultValue={editData ? editData.phone : ''} className={
                     errorData && errorData.phoneError && classes.inputError
-                } defaultValue={editData ? editData.phone : ''}></input>
+                } ></input>
                 {errorData && errorData.phoneError && (
                     <>
                         <p>{errorData.phoneError}</p>
@@ -96,6 +96,8 @@ export async function action({ request, params }) {
     if (contactData.company === "") {
         contactData.company = "No Information Provided";
     }
+    
+    console.log(Object.keys(error).length)
     if (Object.keys(error).length > 0) {
         return error;
     }

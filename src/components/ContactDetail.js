@@ -4,11 +4,6 @@ import classes from './ContactDetail.module.css'
 
 function ContactDetail() {
     const details = useLoaderData();
-    const [edit, isEdit] = useState(false);
-
-    const editHandler = () => {
-      isEdit(true)
-    }
 
     const twoLetter = details.name.split(" ")
     const firstLetter = twoLetter[0].slice(0, 1).toUpperCase();
@@ -21,7 +16,7 @@ function ContactDetail() {
     return (
         <div>
       <div className={classes.showDetails}>
-        {!edit ? <><div className={classes.circleDiv}>
+        <><div className={classes.circleDiv}>
           <p><span className={classes.circle}><span>{profileWord}</span></span></p>
           <p className={classes.nameShow}>{details.name}</p>
           {details.pos && details.company && <p className={classes.showPosition}>{details.pos} at {details.company}</p>}
@@ -47,10 +42,9 @@ function ContactDetail() {
           <div className={classes.col}>{details.address}</div>
         </div>
         <div className={classes.col}>
-        <Link to={`edit`} onClick={editHandler}><div className={classes.coledit}>Edit</div></Link>
+        <Link to={`edit`}><div className={classes.coledit}>Edit</div></Link>
         </div></>
-        :
-        <Outlet/>}
+        <Outlet/>
       </div>
     </div>
     )
