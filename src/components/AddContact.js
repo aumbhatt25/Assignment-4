@@ -63,7 +63,7 @@ export async function action({ request, params }) {
     const data = await request.formData();
 
     const contactData = {
-        name: data.get('name').trim(),
+        name: data.get("name").trim(),
         pos: data.get("pos").trim(),
         email: data.get("email").trim(),
         phone: data.get("phone").trim(),

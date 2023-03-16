@@ -24,6 +24,7 @@
     display: flex;
     font-size: large;
     padding-top: 20px;
+    word-break: break-word;
 }
 
 .showPosition{

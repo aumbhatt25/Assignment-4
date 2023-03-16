@@ -3,6 +3,7 @@
     flex-direction: column;
     background-image: linear-gradient(to bottom,rgb(255, 115, 34),rgb(255, 86, 137));
     align-items: center;
+    position: fixed;
 }
 .nav a{
     display: block;

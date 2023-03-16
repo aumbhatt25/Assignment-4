@@ -10,7 +10,6 @@ function ContactRender(props) {
     }
     return (
         <>
-
             <div className={classes.main}>
                 <div className={classes.circleDiv}>
                     <p>
